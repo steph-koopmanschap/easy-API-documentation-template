@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Easy API documentation Template</title>
+  <meta name="description" content="Easy API documentation Template">
+  <meta name="author" content="Steph Koopmanschap">
+
+  <meta property="og:title" content="Easy API documentation Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://api-doc-template.lan/index.html/">
+  <meta property="og:description" content="Easy API documentation Template">
+  <meta property="og:image" content="image.png">
+
+  <link rel="stylesheet" href="./index.css">
+
+  <script>
+    //This function opens and close the more information box of each paths
+    function toggleExpansion(event) {
+      const moreInfo = event.target.parentElement.parentElement.lastElementChild;
+      let classes = moreInfo.getAttribute('class');
+      if (classes.includes("open")) 
+      {
+        moreInfo.setAttribute('class', "moreInfo closed");
+      }
+      else if (classes.includes("closed"))
+      {
+        moreInfo.setAttribute('class', "moreInfo open");
+      }
+      console.log(classes);
+    }
+  </script>
+
+</head>
+<body>
+  <main>
+    <!-- Here you can provide information about your API -->
+    <section class="meta-information">
+      <h1>Title: Easy API documentation Template</h1>
+      <h2>Description: Easy API documentation Template</h2>
+      <h3>API Version: 1.0.0</h3>
+      <h3>Documentation Version: September 15, 2022</h3>
+      <h3>License: MIT</h3>
+      <h3>License URL: <a>https://mit-license.org/</a></h3>
+      <h3>Author: Steph Koopmanschap</h3>
+      <h3>Contact: N/A</h3>
+      <h3>Contact URL: <a>https://github.com/steph-koopmanschap</a></h3>
+    </section>
+
+    <hr />
+    <h2>Paths:</h2>
+    <hr />
+    <h3>Base API URL: <a>127.0.0.1/api/</a> </h3>
+
+    <!-- Information about each route / path -->
+
+    <!-- User categories to group your routes together -->
+    <h2 class="tag">Category: USER DATA</h2>
+
+    <!-- heading info  -->
+    <section class="headingInfoContainer">
+      <p>Operation:</p>
+      <p>Path:</p>
+      <p>Description:</p>
+    </section>
+    <!-- heading info -END -->
+
+    <!-- PATH -->
+    <!-- Short unexpanded information of the path -->
+    <section class="pathContainer">
+      <div 
+        class="pathUnexpandedContainer" 
+        onclick="toggleExpansion(event)"
+      >
+        <!-- Change the 2nd class in one of the HTTP operations GET, POST, PUT, DELETE -->
+        <div class="operation GET"></div>
+        <!-- Write yor path here -->
+        <p class="path">/getUser/:username</p>
+        <p class="shortDescription">Get user by username</p>
+        <p class="showMoreInfo">
+          Click to show more info
+          <!-- DOWN ARROW ICON -->
+          <svg 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            x="0px" y="0px"
+            viewBox="0 0 25.93 25.93" 
+            style="enable-background:new 0 0 25.93 25.93;" 
+            xml:space="preserve"
+            width="3%"
+            height="3%"
+          >
+      <g>
+        <g id="c118_triangle">
+          <path d="M25.397,4.554h-2.042l-9.974,12.644c-0.101,0.124-0.256,0.197-0.416,0.197c-0.164,0-0.315-0.073-0.419-0.197L2.575,4.554
+            H0.532c-0.206,0-0.392,0.115-0.479,0.299c-0.09,0.184-0.064,0.403,0.06,0.561l12.435,15.762c0.104,0.125,0.255,0.2,0.419,0.2
+            c0.16,0,0.315-0.075,0.416-0.2L25.816,5.413c0.128-0.157,0.148-0.377,0.058-0.561C25.789,4.669,25.601,4.554,25.397,4.554z"/>
+        </g>
+        <g id="Capa_1_184_">
+        </g>
+          </svg>
+          <!-- DOWN ARROW ICON -END -->
+        </p>
+      </div>
+    <!-- Short unexpanded information of the path -END -->
+
+    <!-- Detailed expanded information of the path -->
+
+      <div class="moreInfo closed">
+        <h4>Long description:</h4>
+        <p class="longDescription">Returns the info of the specified user</p>
+        <h4>Parameters:</h4>
+        <p>None</p>
+
+        <h4>Example Responses:</h4>
+        
+        <!-- Succesful response -->
+        <p><strong>Response code:</strong> 200</p>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>userId: 99,</li>
+          <li>name: "Simple Test User",</li>
+          <li>username: "test123",</li> 
+          <li>email: "test123@example.com",</li>
+          <li>password: "$2b$10$VzQhCKrOjYr.KSLQYfLB0.CnP3.SkCd/eN37xyvtdJmaTHalK.Bi6",</li>
+          <li>age: 15,</li> 
+          <li>lastLogin: "25-06-2022",</li> 
+          <li>isLoggedIn: false,</li> 
+        </ul>
+
+        <!-- Error responses -->
+        <p><strong>Response code:</strong> 404</p>
+        <p><strong>JSON:</strong></p>
+        <p>User not found</p>
+
+        <p><strong>Response code:</strong> 500</p>
+        <p><strong>JSON:</strong></p>
+        <p>Internal server error</p>
+        
+        <h4>Example Requests:</h4>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"username": "test123"</li>
+        </ul>
+      </div>
+    <!-- Detailed expanded information of the path -END -->
+    </section>
+    <!-- Path -END -->
+
+    <!-- PATH -->
+    <!-- Short unexpanded information of the path -->
+    <section class="pathContainer">
+      <div 
+        class="pathUnexpandedContainer" 
+        onclick="toggleExpansion(event)"
+      >
+        <!-- Change the 2nd class in one of the HTTP operations GET, POST, PUT, DELETE -->
+        <div class="operation PUT"></div>
+        <!-- Write yor path here -->
+        <p class="path">/loginUser/</p>
+        <p class="shortDescription">Login a user</p>
+        <p class="showMoreInfo">
+          Click to show more info
+          <!-- DOWN ARROW ICON -->
+          <svg 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            x="0px" y="0px"
+            viewBox="0 0 25.93 25.93" 
+            style="enable-background:new 0 0 25.93 25.93;" 
+            xml:space="preserve"
+            width="3%"
+            height="3%"  
+          >
+      <g>
+        <g id="c118_triangle">
+          <path d="M25.397,4.554h-2.042l-9.974,12.644c-0.101,0.124-0.256,0.197-0.416,0.197c-0.164,0-0.315-0.073-0.419-0.197L2.575,4.554
+            H0.532c-0.206,0-0.392,0.115-0.479,0.299c-0.09,0.184-0.064,0.403,0.06,0.561l12.435,15.762c0.104,0.125,0.255,0.2,0.419,0.2
+            c0.16,0,0.315-0.075,0.416-0.2L25.816,5.413c0.128-0.157,0.148-0.377,0.058-0.561C25.789,4.669,25.601,4.554,25.397,4.554z"/>
+        </g>
+        <g id="Capa_1_184_">
+        </g>
+          </svg>
+          <!-- DOWN ARROW ICON -END -->
+        </p>
+      </div>
+    <!-- Short unexpanded information of the path -END -->
+
+    <!-- Detailed expanded information of the path -->
+
+      <div class="moreInfo closed">
+        <h4>Long description:</h4>
+        <p class="longDescription">Logs in a user</p>
+        <h4>Parameters:</h4>
+        <p>None</p>
+
+        <h4>Example Responses:</h4>
+        
+        <!-- Succesful response -->
+        <p><strong>Response code:</strong> 201</p>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"userId": 99,</li>
+          <li>"name": "Simple Test User",</li>
+          <li>"username": "test123",</li> 
+          <li>"email": "test123@example.com",</li>
+          <li>"password:" "$2b$10$VzQhCKrOjYr.KSLQYfLB0.CnP3.SkCd/eN37xyvtdJmaTHalK.Bi6",</li>
+          <li>"age": 15,</li> 
+          <li>"lastLogin": "25-06-2022",</li> 
+          <li>"isLoggedIn": true,</li> 
+        </ul>
+
+        <!-- Error responses -->
+        <p><strong>Response code:</strong> 404</p>
+        <p><strong>JSON:</strong></p>
+        <p>User not found</p>
+
+        <p><strong>response code:</strong> 500</p>
+        <p><strong>JSON:</strong></p>
+        <p>Internal server error</p>
+        
+        <h4>Example Request:</h4>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"username": "test123"</li>
+          <li>"password": "test"</li>
+        </ul>
+      </div>
+    <!-- Detailed expanded information of the path -END -->
+    </section>
+    <!-- Path -END -->
+
+    <!-- PATH -->
+    <!-- Short unexpanded information of the path -->
+    <section class="pathContainer">
+      <div 
+        class="pathUnexpandedContainer" 
+        onclick="toggleExpansion(event)"
+      >
+        <!-- Change the 2nd class in one of the HTTP operations GET, POST, PUT, DELETE -->
+        <div class="operation PUT"></div>
+        <!-- Write yor path here -->
+        <p class="path">/updateUser/:username</p>
+        <p class="shortDescription">Update a user</p>
+        <p class="showMoreInfo">
+          Click to show more info
+          <!-- DOWN ARROW ICON -->
+          <svg 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            x="0px" y="0px"
+            viewBox="0 0 25.93 25.93" 
+            style="enable-background:new 0 0 25.93 25.93;" 
+            xml:space="preserve"
+            width="3%"
+            height="3%" 
+          >
+      <g>
+        <g id="c118_triangle">
+          <path d="M25.397,4.554h-2.042l-9.974,12.644c-0.101,0.124-0.256,0.197-0.416,0.197c-0.164,0-0.315-0.073-0.419-0.197L2.575,4.554
+            H0.532c-0.206,0-0.392,0.115-0.479,0.299c-0.09,0.184-0.064,0.403,0.06,0.561l12.435,15.762c0.104,0.125,0.255,0.2,0.419,0.2
+            c0.16,0,0.315-0.075,0.416-0.2L25.816,5.413c0.128-0.157,0.148-0.377,0.058-0.561C25.789,4.669,25.601,4.554,25.397,4.554z"/>
+        </g>
+        <g id="Capa_1_184_">
+        </g>
+          </svg>
+          <!-- DOWN ARROW ICON -END -->
+        </p>
+      </div>
+    <!-- Short unexpanded information of the path -END -->
+
+    <!-- Detailed expanded information of the path -->
+
+      <div class="moreInfo closed">
+        <h4>Long description:</h4>
+        <p class="longDescription">Update a user with the specified attribute and information</p>
+        <h4>Parameters:</h4>
+        <p>Username</p>
+
+        <h4>Example Responses:</h4>
+        
+        <!-- Succesful response -->
+        <p><strong>Response code:</strong> 201</p>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"userId": 99,</li>
+          <li>"name": "Simple Test User",</li>
+          <li>"username": "test123",</li> 
+          <li>"email": "test123@example.com",</li>
+          <li>"password:" "$2b$10$VzQhCKrOjYr.KSLQYfLB0.CnP3.SkCd/eN37xyvtdJmaTHalK.Bi6",</li>
+          <li>"age": 15,</li> 
+          <li>"lastLogin": "25-06-2022",</li> 
+          <li>"isLoggedIn": false,</li> 
+        </ul>
+
+        <!-- Error responses -->
+        <p><strong>Response code:</strong> 404</p>  
+        <p><strong>JSON:</strong></p>
+        <p>User not found</p>
+
+        <p><strong>Response code:</strong> 500</p>
+        <p><strong>JSON:</strong></p>
+        <p>Internal server error</p>
+        
+        <h4>Example request:</h4>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"property": "isLoggedIn"</li>
+          <li>"value": "false"</li>
+        </ul>
+      </div>
+    <!-- Detailed expanded information of the path -END -->
+    </section>
+    <!-- Path -END -->
+
+    <!-- PATH -->
+    <!-- Short unexpanded information of the path -->
+    <section class="pathContainer">
+      <div 
+        class="pathUnexpandedContainer" 
+        onclick="toggleExpansion(event)"
+      >
+        <!-- Change the 2nd class in one of the HTTP operations GET, POST, PUT, DELETE -->
+        <div class="operation POST"></div>
+        <!-- Write yor path here -->
+        <p class="path">/createUser/:username</p>
+        <p class="shortDescription">Create a new user</p>
+        <p class="showMoreInfo">
+          Click to show more info
+          <!-- DOWN ARROW ICON -->
+          <svg 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            x="0px" y="0px"
+            viewBox="0 0 25.93 25.93" 
+            style="enable-background:new 0 0 25.93 25.93;" 
+            xml:space="preserve"
+            width="3%"
+            height="3%" 
+          >
+      <g>
+        <g id="c118_triangle">
+          <path d="M25.397,4.554h-2.042l-9.974,12.644c-0.101,0.124-0.256,0.197-0.416,0.197c-0.164,0-0.315-0.073-0.419-0.197L2.575,4.554
+            H0.532c-0.206,0-0.392,0.115-0.479,0.299c-0.09,0.184-0.064,0.403,0.06,0.561l12.435,15.762c0.104,0.125,0.255,0.2,0.419,0.2
+            c0.16,0,0.315-0.075,0.416-0.2L25.816,5.413c0.128-0.157,0.148-0.377,0.058-0.561C25.789,4.669,25.601,4.554,25.397,4.554z"/>
+        </g>
+        <g id="Capa_1_184_">
+        </g>
+          </svg>
+          <!-- DOWN ARROW ICON -END -->
+        </p>
+      </div>
+    <!-- Short unexpanded information of the path -END -->
+
+    <!-- Detailed expanded information of the path -->
+
+      <div class="moreInfo closed">
+        <h4>Long description:</h4>
+        <p class="longDescription">Create a new user in the database</p>
+        <h4>Parameters:</h4>
+        <p>Username</p>
+
+        <h4>Example Responses:</h4>
+        
+        <!-- Succesful response -->
+        <p><strong>Response code:</strong> 201</p>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"userId": 99,</li>
+          <li>"name": "Simple Test User",</li>
+          <li>"username": "test123",</li> 
+          <li>"email": "test123@example.com",</li>
+          <li>"password:" "$2b$10$VzQhCKrOjYr.KSLQYfLB0.CnP3.SkCd/eN37xyvtdJmaTHalK.Bi6",</li>
+          <li>"age": 15,</li> 
+          <li>"lastLogin": "25-06-2022",</li> 
+          <li>"isLoggedIn": false,</li> 
+        </ul>
+
+        <!-- Error responses -->
+        <p><strong>Response code:</strong> 400</p>  
+        <p><strong>JSON:</strong></p>
+        <p>Validation error</p>
+
+        <p><strong>Response code:</strong> 404</p>  
+        <p><strong>JSON:</strong></p>
+        <p>Error creating user</p>
+
+        <p><strong>Response code:</strong> 500</p>
+        <p><strong>JSON:</strong></p>
+        <p>Internal server error</p>
+        
+        <h4>Example request:</h4>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"property": "isLoggedIn"</li>
+          <li>"value": "false"</li>
+        </ul>
+      </div>
+    <!-- Detailed expanded information of the path -END -->
+    </section>
+    <!-- Path -END -->
+
+    <!-- User categories to group your routes together -->
+    <h2 class="tag">Category: ENTRY DATA</h2>
+
+    <!-- heading info  -->
+    <section class="headingInfoContainer">
+      <p>Operation:</p>
+      <p>Path:</p>
+      <p>Description:</p>
+    </section>
+    <!-- heading info -END -->
+
+    <!-- PATH -->
+    <!-- Short unexpanded information of the path -->
+    <section class="pathContainer">
+      <div 
+        class="pathUnexpandedContainer" 
+        onclick="toggleExpansion(event)"
+      >
+        <!-- Change the 2nd class in one of the HTTP operations GET, POST, PUT, DELETE -->
+        <div class="operation GET"></div>
+        <!-- Write yor path here -->
+        <p class="path">/getAllEntries/:username</p>
+        <p class="shortDescription">Get all entries of user</p>
+        <p class="showMoreInfo">
+          Click to show more info
+          <!-- DOWN ARROW ICON -->
+          <svg 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            x="0px" y="0px"
+            viewBox="0 0 25.93 25.93" 
+            style="enable-background:new 0 0 25.93 25.93;" 
+            xml:space="preserve"
+            width="3%"
+            height="3%"  
+          >
+      <g>
+        <g id="c118_triangle">
+          <path d="M25.397,4.554h-2.042l-9.974,12.644c-0.101,0.124-0.256,0.197-0.416,0.197c-0.164,0-0.315-0.073-0.419-0.197L2.575,4.554
+            H0.532c-0.206,0-0.392,0.115-0.479,0.299c-0.09,0.184-0.064,0.403,0.06,0.561l12.435,15.762c0.104,0.125,0.255,0.2,0.419,0.2
+            c0.16,0,0.315-0.075,0.416-0.2L25.816,5.413c0.128-0.157,0.148-0.377,0.058-0.561C25.789,4.669,25.601,4.554,25.397,4.554z"/>
+        </g>
+        <g id="Capa_1_184_">
+        </g>
+          </svg>
+          <!-- DOWN ARROW ICON -END -->
+        </p>
+      </div>
+    <!-- Short unexpanded information of the path -END -->
+
+    <!-- Detailed expanded information of the path -->
+
+      <div class="moreInfo closed">
+        <h4>Long description:</h4>
+        <p class="longDescription">Get all entries of specified user</p>
+        <h4>Parameters:</h4>
+        <p>Username</p>
+
+        <h4>Example Responses:</h4>
+        
+        <!-- Succesful response -->
+        <p><strong>Response code:</strong> 200</p>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"entries": [</li>
+          <ul>
+            <li>"entryId": 0,</li> 
+            <li>"date": "19-06-2022",</li>
+            <li>"type": "anxiety",</li>
+            <li>"level": 2,</li> 
+            <li>"event": ["unknown"],</li>
+            <li>"notes": "I am just a simple test user."</li>
+          </ul> 
+            <ul>
+            <li>"entryId": 1,</li> 
+            <li>"date": "20-06-2022",</li>
+            <li>"type": "depression",</li>
+            <li>"level": 9,</li> 
+            <li>"event": ["unknown"],</li>
+            <li>"notes": "I am sick of being a test user."</li>
+          </ul> 
+          <li>]</li>
+        </ul>
+
+        <!-- Error responses -->
+        <p><strong>Response code:</strong> 404</p>  
+        <p><strong>JSON:</strong></p>
+        <p>User not found</p>
+
+        <p><strong>Response code:</strong> 500</p>
+        <p><strong>JSON:</strong></p>
+        <p>Internal server error</p>
+        
+        <h4>Example request:</h4>
+        <p><strong>JSON:</strong></p>
+      </div>
+    <!-- Detailed expanded information of the path -END -->
+    </section>
+    <!-- Path -END -->
+
+    <!-- PATH -->
+    <!-- Short unexpanded information of the path -->
+    <section class="pathContainer">
+      <div 
+        class="pathUnexpandedContainer" 
+        onclick="toggleExpansion(event)"
+      >
+        <!-- Change the 2nd class in one of the HTTP operations GET, POST, PUT, DELETE -->
+        <div class="operation POST"></div>
+        <!-- Write yor path here -->
+        <p class="path">/addEntry/:username</p>
+        <p class="shortDescription">Add a new entry for the user</p>
+        <p class="showMoreInfo">
+          Click to show more info
+          <!-- DOWN ARROW ICON -->
+          <svg 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            x="0px" y="0px"
+            viewBox="0 0 25.93 25.93" 
+            style="enable-background:new 0 0 25.93 25.93;" 
+            xml:space="preserve"
+            width="3%"
+            height="3%"  
+          >
+      <g>
+        <g id="c118_triangle">
+          <path d="M25.397,4.554h-2.042l-9.974,12.644c-0.101,0.124-0.256,0.197-0.416,0.197c-0.164,0-0.315-0.073-0.419-0.197L2.575,4.554
+            H0.532c-0.206,0-0.392,0.115-0.479,0.299c-0.09,0.184-0.064,0.403,0.06,0.561l12.435,15.762c0.104,0.125,0.255,0.2,0.419,0.2
+            c0.16,0,0.315-0.075,0.416-0.2L25.816,5.413c0.128-0.157,0.148-0.377,0.058-0.561C25.789,4.669,25.601,4.554,25.397,4.554z"/>
+        </g>
+        <g id="Capa_1_184_">
+        </g>
+          </svg>
+          <!-- DOWN ARROW ICON -END -->
+        </p>
+      </div>
+    <!-- Short unexpanded information of the path -END -->
+
+    <!-- Detailed expanded information of the path -->
+
+      <div class="moreInfo closed">
+        <h4>Long description:</h4>
+        <p class="longDescription">Creates a new entry for the specified user</p>
+        <h4>Parameters:</h4>
+        <p>Username</p>
+
+        <h4>Example Responses:</h4>
+        
+        <!-- Succesful response -->
+        <p><strong>Response code:</strong> 201</p>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"entryId": 6,</li> 
+          <li>"date": "19-06-2022",</li>
+          <li>"type": "anxiety",</li>
+          <li>"level": 2,</li> 
+          <li>"event": ["unknown"],</li>
+          <li>"notes": "I hate debugging."</li>
+        </ul>
+
+        <!-- Error responses -->
+        <p><strong>Response code:</strong> 404</p>  
+        <p><strong>JSON:</strong></p>
+        <p>User not found</p>
+
+        <p><strong>Response code:</strong> 500</p>
+        <p><strong>JSON:</strong></p>
+        <p>Internal server error</p>
+        
+        <h4>Example request:</h4>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"entryId": 6,</li> 
+          <li>"date": "19-06-2022",</li>
+          <li>"type": "anxiety",</li>
+          <li>"level": 2,</li> 
+          <li>"event": ["unknown"],</li>
+          <li>"notes": "I hate debugging."</li>
+        </ul>
+      </div>
+    <!-- Detailed expanded information of the path -END -->
+    </section>
+    <!-- Path -END -->
+
+    <!-- PATH -->
+    <!-- Short unexpanded information of the path -->
+    <section class="pathContainer">
+      <div 
+        class="pathUnexpandedContainer" 
+        onclick="toggleExpansion(event)"
+      >
+        <!-- Change the 2nd class in one of the HTTP operations GET, POST, PUT, DELETE -->
+        <div class="operation DELETE"></div>
+        <!-- Write yor path here -->
+        <p class="path">/deleteEntry/:username/:entryID</p>
+        <p class="shortDescription">Deletes an entry of user</p>
+        <p class="showMoreInfo">
+          Click to show more info
+          <!-- DOWN ARROW ICON -->
+          <svg 
+            version="1.1" 
+            id="Capa_1" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            x="0px" y="0px"
+            viewBox="0 0 25.93 25.93" 
+            style="enable-background:new 0 0 25.93 25.93;" 
+            xml:space="preserve"
+            width="3%"
+            height="3%"  
+          >
+      <g>
+        <g id="c118_triangle">
+          <path d="M25.397,4.554h-2.042l-9.974,12.644c-0.101,0.124-0.256,0.197-0.416,0.197c-0.164,0-0.315-0.073-0.419-0.197L2.575,4.554
+            H0.532c-0.206,0-0.392,0.115-0.479,0.299c-0.09,0.184-0.064,0.403,0.06,0.561l12.435,15.762c0.104,0.125,0.255,0.2,0.419,0.2
+            c0.16,0,0.315-0.075,0.416-0.2L25.816,5.413c0.128-0.157,0.148-0.377,0.058-0.561C25.789,4.669,25.601,4.554,25.397,4.554z"/>
+        </g>
+        <g id="Capa_1_184_">
+        </g>
+          </svg>
+          <!-- DOWN ARROW ICON -END -->
+        </p>
+      </div>
+    <!-- Short unexpanded information of the path -END -->
+
+    <!-- Detailed expanded information of the path -->
+
+      <div class="moreInfo closed">
+        <h4>Long description:</h4>
+        <p class="longDescription">Deletes the specified entry for the specified user</p>
+        <h4>Parameters:</h4>
+        <p>Username</p>
+        <p>entryID</p>
+
+        <h4>Example Responses:</h4>
+        
+        <!-- Succesful response -->
+        <p><strong>Response code:</strong> 201</p>
+        <p><strong>JSON:</strong></p>
+        <ul>
+          <li>"entryId": 6,</li> 
+          <li>"date": "19-06-2022",</li>
+          <li>"type": "anxiety",</li>
+          <li>"level": 2,</li> 
+          <li>"event": ["unknown"],</li>
+          <li>"notes": "I hate debugging."</li>
+        </ul>
+
+        <!-- Error responses -->
+        <p><strong>Response code:</strong> 404</p>  
+        <p><strong>JSON:</strong></p>
+        <p>User not found</p>
+
+        <p><strong>Response code:</strong> 500</p>
+        <p><strong>JSON:</strong></p>
+        <p>Internal server error</p>
+        
+        <h4>Example request:</h4>
+        <p><strong>JSON:</strong></p>
+      </div>
+    <!-- Detailed expanded information of the path -END -->
+    </section>
+    <!-- Path -END -->
+
+  </main>
+</body>
+</html>

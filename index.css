@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 2.5%;
+}
+
+button {
+    border: none;   
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+ul::before {
+    content: "{";
+}
+
+ul::after {
+    content: "}";
+}
+
+ul ul::after {
+    content: "},";
+}
+
+ul li::before {
+    content: "\00a0 \00a0 \00a0 \00a0";
+}
+
+.tag {
+    margin: auto;
+    margin-top: 2.5%;
+    border-bottom: 1px solid black;
+    width: fit-content;
+    text-align: center;
+}
+
+.headingInfoContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    margin: 1%;
+    margin-left: 7%;
+}
+
+.headingInfoContainer p {
+    margin-right: 16%;
+    font-weight: bold;
+}
+
+.pathContainer {
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-bottom: 1%;
+}
+
+.pathUnexpandedContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    column-gap: 10%;
+    justify-content: start;
+    margin: 1%;
+    margin-left: 7%;
+}
+
+.pathUnexpandedContainer:hover {
+    cursor: pointer;
+}
+
+.operation {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 0.5%;
+    align-self: center; 
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.GET {
+    background-color: blue;
+}
+
+.GET::after {
+    content: 'GET';
+}
+
+.PUT {
+    background-color: darkgoldenrod;
+}
+
+.PUT::after {
+    content: 'PUT';
+}
+
+.POST {
+    background-color: darkgreen;
+}
+
+.POST::after {
+    content: 'POST';
+}
+
+.DELETE {   
+    background-color: red;
+}
+
+.DELETE::after {
+    content: 'DELETE';
+}
+
+.path {
+    font-weight: bold;
+    width: 100%;
+}
+
+.shortDescription {
+    width: 100%;
+}
+
+.closed {
+    display: none;
+    visibility: hidden;
+}
+
+.open {
+    display: flex;
+    visibility: visible;
+}
+
+.showMoreInfo {
+    align-self: center;
+    font-size: 16px;
+}
+
+.moreInfo {
+    flex-direction: column;
+    border-top: 1px solid black;
+    padding: 1%;
+}
+
+.moreInfo h4 {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
