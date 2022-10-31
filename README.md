@@ -8,3 +8,7 @@ The default file is just a template and an example.
 Simply edit the index.html file and fill in the information 
  You can copy paste the routes to add your own. To do so copy everything between `<!-- PATH -->` and `<!-- PATH -END -->`
 For complete customization you can also edit the index.css file, but in general its not needed to be touched.
+
+## Screenshots
+
+![api documentation screenshot](/screenshot.png?raw=true)
